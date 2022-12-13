@@ -1,0 +1,69 @@
+﻿@page "/SWIFTGEN"
+
+<PageTitle>SWIFT Generator</PageTitle>
+
+<h1>SWIFT Generator</h1>
+
+<form>
+
+<h6>Account Name of Final Beneficiary:</h6>
+<input type="text" @bind="accName" >
+    <br />
+    <br />
+ 
+<h6>Account Number of Final Beneficiary:</h6>
+    
+    <input type="text" @bind="accNo">
+<br/>
+<br/>
+
+ <h6>BIC of Beneficiary Bank:</h6>
+    
+    <input type="text" @bind="bBIC">
+    <br />
+    <br />
+<h6>Intermediary/Correspondant BIC:</h6>
+    
+    <input type="text" @bind="iBIC">
+    <br />
+    <br />
+<h6>Additional Information:</h6>
+    
+    <input type="text" @bind="addInfo">
+    <br />
+    <br />
+<h6>Amount to Transfer:</h6>
+    <input type="number" @bind="amnt">
+
+</form>
+
+
+<br />
+
+<h3>Your MT103 SWIFT:</h3>
+<p>:20:8756249</p>
+<p>:23B:CRED</p>
+<p role="status">:32A:221111AUD @amnt</p>
+<p role="status">:33B:AUD @amnt</p>
+<p>:50K:/83F75829810</p>
+<p>:52A:UILDTNGIQY</p>
+<p>:53D:/385927502937</p>
+<p role="status">:56A: @iBIC</p>
+<p role="status">:57A://AU @amnt</p>
+<p role="status">@bBIC</p>
+<p role="status">:59A:/@accNo</p>
+<p role="status">:59D:/@accName</p>
+<p role="status">:70:/@addInfo</p>
+<p>:71A:OUR</p>
+
+
+@code {
+    string accName;
+    string accNo;
+    string bBIC;
+    string iBIC;
+    string addInfo;
+    string amnt;
+
+
+}
